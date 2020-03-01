@@ -66,7 +66,7 @@ async def incoming_message_f(client, message):
             # if FAILED, display the error message
             await i_m_sefg.edit_text(err_message)
     else:
-        await i_m_sefg.edit_text("The link you entered is incorrect. Please read /help")
+        await i_m_sefg.edit_text("The link you entered is incorrect or If magnet link type with bold else")
 
 
 async def incoming_youtube_dl_f(client, message):
