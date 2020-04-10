@@ -12,8 +12,8 @@ A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.c
 Simply clone the repository and run the main file:
 
 ```sh
-git clone https://github.com/SpEcHiDe/PublicLeech.git
-cd PublicLeech
+git clone https://github.com/cdfxscrq/Leech.git
+cd Leech
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
@@ -91,7 +91,7 @@ class Config(Config):
 
 * search for known issues, [here](https://t.me/c/1434259219/118).
 
-* add issues / feature requests, [here](https://github.com/SpEcHiDe/PublicLeech/issues/new).
+* add issues / feature requests, [here](https://github.com/cdfxscrq/Leech/issues/new).
 
 
 ## Credits, and Thanks to
