@@ -52,6 +52,13 @@ async def progress_for_pyrogram(
                     tmp
                 )
             )
+        else:
+            await message.edit_caption(
+                caption="{}\n {}".format(
+                    ud_type,
+                    tmp
+                 )
+             )
         except:
             pass
 
