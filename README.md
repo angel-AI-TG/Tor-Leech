@@ -72,6 +72,8 @@ class Config(Config):
 
 * `UN_FINISHED_PROGRESS_STR`
 
+* `TG_OFFENSIVE_API`
+
 
 ## Available Commands
 
