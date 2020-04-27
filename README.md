@@ -12,7 +12,7 @@ A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.c
 Simply clone the repository and run the main file:
 
 ```sh
-git clone https://github.com/SpEcHiDe/PublicLeech.git
+git clone https://github.com/Ashok2umar/PublicLeech.git
 cd PublicLeech
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
@@ -67,6 +67,12 @@ class Config(Config):
 * `EDIT_SLEEP_TIME_OUT`
 
 * `MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START`
+
+* `FINISHED_PROGRESS_STR`
+
+* `UN_FINISHED_PROGRESS_STR`
+
+* `TG_OFFENSIVE_API`
 
 
 ## Available Commands
