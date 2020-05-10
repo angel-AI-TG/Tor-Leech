@@ -37,7 +37,6 @@ async def aria_start():
     # but for now, https://t.me/TrollVoiceBot?start=858
     aria2_daemon_start_cmd.append("--enable-rpc")
     aria2_daemon_start_cmd.append("--follow-torrent=mem")
-    aria2_daemon_start_cmd.append("--bt-enable-lpd=true")
     aria2_daemon_start_cmd.append("--max-connection-per-server=16")
     aria2_daemon_start_cmd.append("--min-split-size=10M")
     aria2_daemon_start_cmd.append("--rpc-listen-all=false")
@@ -47,7 +46,6 @@ async def aria_start():
     aria2_daemon_start_cmd.append("--seed-ratio=0.0")
     aria2_daemon_start_cmd.append("--seed-time=1")
     aria2_daemon_start_cmd.append("--split=10")
-    aria2_daemon_start_cmd.append("--bt-request-peer-speed-limit=150000M")
     aria2_daemon_start_cmd.append(f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}")
     #
     LOGGER.info(aria2_daemon_start_cmd)
@@ -64,7 +62,7 @@ async def aria_start():
         aria2p.Client(
             host="http://localhost",
             port=ARIA_TWO_STARTED_PORT,
-            secret="seedr123"
+            secret=""
         )
     )
     return aria2
