@@ -73,9 +73,7 @@
   "addons": [
   ],
   "buildpacks": [{
-    "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
-  } , {
-    "url": "https://github.com/HasibulKabir/heroku-buildpack-p7zip"
+    "url": "https://github.com/cdfxscrq/heroku-buildpack-rarlab"
   } , {
     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
   }, {
@@ -88,5 +86,6 @@
       "quantity": 1,
       "size": "free"
     }
+  }
   }
 }
