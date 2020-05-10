@@ -39,8 +39,7 @@ async def upload_to_tg(
     message,
     local_file_name,
     from_user,
-    dict_contatining_uploaded_files,
-    edit_media=False
+    dict_contatining_uploaded_files
 ):
     LOGGER.info(local_file_name)
     base_file_name = os.path.basename(local_file_name)
