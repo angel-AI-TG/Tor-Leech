@@ -38,7 +38,7 @@ async def split_large_files(input_file):
     LOGGER.info(new_working_directory)
     if 0:
     #if input_file.upper().endswith(("MKV", "MP4", "WEBM", "MP3", "M4A", "FLAC", "WAV")):
-    if False:
+    #if False:
         # handle video / audio files here
         metadata = extractMetadata(createParser(input_file))
         total_duration = 0
