@@ -30,21 +30,24 @@ async def aria_start():
     aria2_daemon_start_cmd = []
     # start the daemon, aria2c command
     aria2_daemon_start_cmd.append("aria2c")
-    # aria2_daemon_start_cmd.append("--allow-overwrite=true")
+    aria2_daemon_start_cmd.append("--allow-overwrite=true")
     aria2_daemon_start_cmd.append("--daemon=true")
     # aria2_daemon_start_cmd.append(f"--dir={DOWNLOAD_LOCATION}")
     # TODO: this does not work, need to investigate this.
     # but for now, https://t.me/TrollVoiceBot?start=858
     aria2_daemon_start_cmd.append("--enable-rpc")
     aria2_daemon_start_cmd.append("--follow-torrent=mem")
+    aria2_daemon_start_cmd.append("--bt-enable-lpd=true")
     aria2_daemon_start_cmd.append("--max-connection-per-server=16")
     aria2_daemon_start_cmd.append("--min-split-size=10M")
     aria2_daemon_start_cmd.append("--rpc-listen-all=false")
     aria2_daemon_start_cmd.append(f"--rpc-listen-port={ARIA_TWO_STARTED_PORT}")
     aria2_daemon_start_cmd.append("--rpc-max-request-size=1024M")
+    aria2_daemon_start_cmd.append("--enable-peer-exchange=true")
     aria2_daemon_start_cmd.append("--seed-ratio=0.0")
     aria2_daemon_start_cmd.append("--seed-time=1")
     aria2_daemon_start_cmd.append("--split=10")
+    aria2_daemon_start_cmd.append("--bt-request-peer-speed-limit=150000M")
     aria2_daemon_start_cmd.append(f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}")
     #
     LOGGER.info(aria2_daemon_start_cmd)
@@ -61,7 +64,7 @@ async def aria_start():
         aria2p.Client(
             host="http://localhost",
             port=ARIA_TWO_STARTED_PORT,
-            secret=""
+            secret="seedr123"
         )
     )
     return aria2
@@ -168,8 +171,12 @@ async def call_apropriate_function(
         # first check if current free space allows this
         # ref: https://github.com/out386/aria-telegram-mirror-bot/blob/master/src/download_tools/aria-tools.ts#L194
         # archive the contents
+        lg1 = "to_upload_file = "+to_upload_file
+        LOGGER.info(lg1)
         check_if_file = await create_archive(to_upload_file)
         if check_if_file is not None:
+            lg1 = "check_if_file = "+check_if_file
+            LOGGER.info(lg1)
             to_upload_file = check_if_file
     #
     response = {}
@@ -228,13 +235,13 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 except:
                     pass
                 #
-                msg = f"\nDownloading File: `{downloading_dir_name}`"
-                msg += f"\nSpeed: {file.download_speed_string()} ⏬ / {file.upload_speed_string()} ⏫"
-                msg += f"\nProgress: {file.progress_string()}"
-                msg += f"\nTotal Size: {file.total_length_string()}"
+                msg = f"\nDownloading File: `{downloading_dir_name}`📥 "
+                msg += f"\nSpeed: {file.download_speed_string()} ⬇️ / {file.upload_speed_string()} ⬆️"
+                msg += f"\nProgress: {file.progress_string()}🔄 "
+                msg += f"\nTotal Size: {file.total_length_string()}🗂️ "
 
                 if is_file is None :
-                   msg += f"\n<b>Connections:</b> {file.connections}"
+                   msg += f"\n<b>Connections:</b> {file.connections}📶 "
                 else :
                    msg += f"\n<b>Info:</b>[ P : {file.connections} || S : {file.num_seeders} ]"
 
@@ -252,16 +259,16 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await check_progress_for_dl(aria2, gid, event, previous_message)
         else:
-            await event.edit(f"File Downloaded Successfully: `{file.name}`")
+            await event.edit(f"File Downloaded Successfully ✔️ : `{file.name}`")
             return True
     except Exception as e:
         LOGGER.info(str(e))
         if " not found" in str(e) or "'file'" in str(e):
-            await event.edit("Download Canceled :\n`{}`".format(file.name))
+            await event.edit("Download Canceled ✖️ :\n`{}`".format(file.name))
             return False
         elif " depth exceeded" in str(e):
             file.remove(force=True)
-            await event.edit("Download Auto Canceled :\n`{}`\nYour Torrent/Link is Dead.".format(file.name))
+            await event.edit("Download Auto Canceled 🛑 :\n`{}`\nYour Torrent/Link is Dead.".format(file.name))
             return False
         else:
             LOGGER.info(str(e))
