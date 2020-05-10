@@ -29,10 +29,15 @@ async def split_large_files(input_file):
         working_directory,
         str(time.time())
     )
+    LOGGER.info("=============IN SPLIT INFILE")
+    LOGGER.info(input_file)
     # create download directory, if not exist
     if not os.path.isdir(new_working_directory):
         os.makedirs(new_working_directory)
-    # if input_file.upper().endswith(("MKV", "MP4", "WEBM", "MP3", "M4A", "FLAC", "WAV")):
+    LOGGER.info("=============IN SPLIT new_working_directory")
+    LOGGER.info(new_working_directory)
+    if 0:
+    #if input_file.upper().endswith(("MKV", "MP4", "WEBM", "MP3", "M4A", "FLAC", "WAV")):
     """The below logic is DERPed, so removing temporarily
     """
     if False:
@@ -78,17 +83,18 @@ async def split_large_files(input_file):
         # handle normal files here
         o_d_t = os.path.join(
             new_working_directory,
-            os.path.basename(input_file)
+            os.path.basename(input_file),
         )
-        o_d_t = o_d_t + "."
+        LOGGER.info(o_d_t)
         file_genertor_command = [
-            "split",
-            "--numeric-suffixes=1",
-            "--suffix-length=5",
-            f"--bytes={MAX_TG_SPLIT_FILE_SIZE}",
-            input_file,
-            o_d_t
+            "rar",
+            "a",
+            "-v1024m",
+            "-m0",
+            o_d_t,
+            input_file
         ]
+        LOGGER.info(file_genertor_command)
         process = await asyncio.create_subprocess_exec(
             *file_genertor_command,
             # stdout must a pipe to be accessible as process.stdout
