@@ -35,25 +35,10 @@ async def new_join_f(client, message):
 async def help_message_f(client, message):
     # await message.reply_text("no one gonna help you 🤣🤣🤣🤣", quote=True)
     channel_id = str(AUTH_CHANNEL)[4:]
-    message_id = 3136
+    message_id = 1179982692/3
     # display the /help message
     await message.reply_text(
-        f"Tor Leech Group 
-
-You Can Leech Porn / Non Porn Allowed !!!!!
-
-Magnet / Torrent File Also Worked !!!!!
-
-Respect Others And Don't spem otherwise I will ban you !!!!!
-
-Torleech backup Group💽 - 
-
-https://t.me/joinchat/OYvkwhq_1VFnpM_NkPmCtA
-
-Please Share the Link 📱-
-Https://t.me/torleech
-
-Note : Please Backup yourself !!!!/a>",
+        f"Tor Leech Group/a>",
         quote=True
     )
 
