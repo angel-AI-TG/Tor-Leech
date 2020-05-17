@@ -38,7 +38,22 @@ async def help_message_f(client, message):
     message_id = 3136
     # display the /help message
     await message.reply_text(
-        f"please read the <a href='https://t.me/c/{channel_id}/{message_id}'>Pinned Message</a>",
+        f"Tor Leech Group 
+
+You Can Leech Porn / Non Porn Allowed !!!!!
+
+Magnet / Torrent File Also Worked !!!!!
+
+Respect Others And Don't spem otherwise I will ban you !!!!!
+
+Torleech backup Group💽 - 
+
+https://t.me/joinchat/OYvkwhq_1VFnpM_NkPmCtA
+
+Please Share the Link 📱-
+Https://t.me/torleech
+
+Note : Please Backup yourself !!!!/a>",
         quote=True
     )
 
