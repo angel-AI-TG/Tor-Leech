@@ -8,6 +8,8 @@ A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.c
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/cdfxscrq/tor-leech/badge)](https://www.codefactor.io/repository/github/cdfxscrq/tor-leech)
+
 ### The Legacy Way
 Simply clone the repository and run the main file:
 
