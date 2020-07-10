@@ -1,4 +1,10 @@
 # Telegram Torrent Leecher 🔥🤖
+<p align="center">
+<p align="center">
+<a 
+<a href="https://www.python.org/"><img alt="language" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg"/></a>
+<a href="https://github.com/ellerbrock/open-source-badges/"><img alt="author" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"/></a>
+</p>
 
 A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.com/pyrogram/pyrogram)
 
@@ -9,8 +15,6 @@ A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.c
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/cdfxscrq/tor-leech/badge)](https://www.codefactor.io/repository/github/cdfxscrq/tor-leech)
-
-<a href="https://www.python.org/"><img alt="language" src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg"/></a>
 
 ### The Legacy Way
 Simply clone the repository and run the main file:
