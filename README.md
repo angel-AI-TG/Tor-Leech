@@ -7,6 +7,7 @@
 [![Contributors](https://img.shields.io/github/contributors/cdfxscrq/Tor-Leech)](https://github.com/cdfxscrq/Tor-Leech/graphs/contributors)
 ![Last Commit](https://img.shields.io/github/last-commit/cdfxscrq/Tor-Leech/master)
 ![Pull Requests](https://img.shields.io/github/issues-pr/cdfxscrq/Tor-Leech)
+[![StyleCI](https://github.styleci.io/repos/243839605/shield?branch=master)](https://github.styleci.io/repos/243839605)
 
 A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.com/pyrogram/pyrogram)
 
