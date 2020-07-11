@@ -1,6 +1,6 @@
 <h1 align="center">Telegram Torrent Leecher 🔥🤖</h1>
 
-[![Python Version](https://img.shields.io/badge/Python-v3.8-blue)
+![Python Version](https://img.shields.io/badge/Python-v3.8-blue)
 [![Repo Size](https://img.shields.io/github/repo-size/cdfxscrq/Tor-Leech)
 [![Commit Activity](https://img.shields.io/github/commit-activity/w/cdfxscrq/Tor-Leech)](https://github.com/cdfxscrq/Tor-Leech/pulse)
 [![HitCount](http://hits.dwyl.com/cdfxscrq/Tor-Leech.svg)](http://hits.dwyl.com/cdfxscrq/Tor-Leech)
