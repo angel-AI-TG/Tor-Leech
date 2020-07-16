@@ -45,7 +45,7 @@ async def aria_start():
     aria2_daemon_start_cmd.append("--rpc-max-request-size=1024M")
     aria2_daemon_start_cmd.append("--enable-peer-exchange=true")
     aria2_daemon_start_cmd.append("--seed-ratio=0")
-    aria2_daemon_start_cmd.append("--seed-time=0.01")
+    aria2_daemon_start_cmd.append("--seed-time=0")
     aria2_daemon_start_cmd.append("--split=10")
     aria2_daemon_start_cmd.append(f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}")
     #
