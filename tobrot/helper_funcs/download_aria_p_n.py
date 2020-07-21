@@ -24,7 +24,11 @@ from tobrot import (
     DOWNLOAD_LOCATION,
     EDIT_SLEEP_TIME_OUT
 )
-
+from pyrogram import (
+	InlineKeyboardButton,
+	InlineKeyboardMarkup,
+	Message
+)
 
 async def aria_start():
     aria2_daemon_start_cmd = []
@@ -245,10 +249,17 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
 
                 # msg += f"\nStatus: {file.status}"
                 msg += f"\nETA: {file.eta_string()}"
-                msg += f"\n<code>/cancel {gid}</code>"
-                # LOGGER.info(msg)
+                msg += f"\nGID: <code>{gid}</code>"
+                msg += f"\nGID: <code>{gid}</code>"
+                inline_keyboard = []
+                ikeyboard = []
+                ikeyboard.append(InlineKeyboardButton("Cancel 🚫", callback_data=(f"cancel {gid}").encode("UTF-8")))
+                inline_keyboard.append(ikeyboard)
+                reply_markup = InlineKeyboardMarkup(inline_keyboard)
+                #msg += reply_markup
+                LOGGER.info(msg)
                 if msg != previous_message:
-                    await event.edit(msg)
+                    await event.edit(msg, reply_markup=reply_markup)
                     previous_message = msg
             else:
                 msg = file.error_message
@@ -262,11 +273,11 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
     except Exception as e:
         LOGGER.info(str(e))
         if " not found" in str(e) or "'file'" in str(e):
-            await event.edit("Download Canceled ✖️ :\n`{}`".format(file.name))
+            await event.edit("Download Canceled")
             return False
         elif " depth exceeded" in str(e):
             file.remove(force=True)
-            await event.edit("Download Auto Canceled 🛑 :\n`{}`\nYour Torrent/Link is Dead.".format(file.name))
+            await event.edit("Download Auto Canceled\nYour Torrent/Link is Dead.")
             return False
         else:
             LOGGER.info(str(e))
