@@ -1,4 +1,4 @@
-<h1 align="center">Telegram Torrent Leecher 🔥🤖</h1>
+<h1 align="center">Tg Magnet / Torrent / YouTube Leecher 🔥🤖</h1>
 
 ![Python Version](https://img.shields.io/badge/Python-v3.8-blue)
 ![Repo Size](https://img.shields.io/github/repo-size/cdfxscrq/Tor-Leech)
@@ -99,9 +99,9 @@ class Config(Config):
 
 * send any one of the available command, as a reply to a valid link.
 
-* if file is larger than 1500MB, [read this](https://t.me/c/1434259219/113).
+* if file is larger than 2000MB, [read this](https://t.me/c/1434259219/113).
 
-* if file is a TAR archive, [read this](https://t.me/c/1434259219/104) to know how to uncompress.
+* if file is a RAR archive, [read this](https://t.me/c/1434259219/104) to know how to uncompress.
 
 
 ## Issues or Feature Requests
@@ -113,8 +113,8 @@ class Config(Config):
 
 ## Credits, and Thanks to
 
+* [SpEcHiDe](https://github.com/SpEcHiDe) for his code 💐.
 * [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Robots](https://telegram.dog/Robots) for their [@UploadBot](https://telegram.dog/UploadBot)
 * [@AjeeshNair](https://telegram.dog/AjeeshNait) for his [torrent.ajee.sh](https://torrent.ajee.sh)
 * [@gotstc](https://telegram.dog/gotstc), @aryanvikash, [@HasibulKabir](https://telegram.dog/HasibulKabir) for their TORRENT groups
-* [![CopyLeft](https://telegra.ph/file/b514ed14d994557a724cb.jpg)](https://telegra.ph/file/fab1017e21c42a5c1e613.mp4 "CopyLeft Credit Video")
