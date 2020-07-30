@@ -17,6 +17,10 @@ A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.c
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## Deployed by Netlify
+
+[![https://www.netlify.com/img/global/badges/netlify-color-bg.svg](https://www.netlify.com/img/global/badges/netlify-color-bg.svg)](https://www.netlify.com)
+
 [![CodeFactor](https://www.codefactor.io/repository/github/cdfxscrq/tor-leech/badge)](https://www.codefactor.io/repository/github/cdfxscrq/tor-leech)
 
 ### The Legacy Way
