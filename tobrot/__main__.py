@@ -37,6 +37,8 @@ from tobrot.plugins.custom_thumbnail import (
     save_thumb_nail,
     clear_thumb_nail
 )
+from tobrot.helper_funcs.custom_filters import message_fliter
+from tobrot.dinmamoc import Commandi
 
 
 if __name__ == "__main__" :
@@ -52,11 +54,13 @@ if __name__ == "__main__" :
         workers=343
     )
     #
-    incoming_message_handler = MessageHandler(
-        incoming_message_f,
-        filters=Filters.command([[Commandi.LEECH]]) & Filters.chat(chats=AUTH_CHANNEL)
-    )
-    app.add_handler(incoming_message_handler)
+    app.set_parse_mode("html")
+    #
+    # incoming_message_handler = MessageHandler(
+    #     incoming_message_f,
+    #     filters=Filters.command([Commandi.LEECH]) & Filters.chat(chats=AUTH_CHANNEL)
+    # )
+    # app.add_handler(incoming_message_handler)
     #
     incoming_purge_message_handler = MessageHandler(
         incoming_purge_message_f,
@@ -70,11 +74,11 @@ if __name__ == "__main__" :
     )
     app.add_handler(incoming_youtube_dl_handler)
     #
-    status_message_handler = MessageHandler(
-        status_message_f,
-        filters=Filters.command([Commandi.STATUS]) & Filters.chat(chats=AUTH_CHANNEL)
-    )
-    app.add_handler(status_message_handler)
+    # incoming_youtube_dl_handler = MessageHandler(
+    #     incoming_youtube_dl_f,
+    #     filters=Filters.command([Commandi.YTDL]) & Filters.chat(chats=AUTH_CHANNEL)
+    # )
+    # app.add_handler(incoming_youtube_dl_handler)
     #
     cancel_message_handler = MessageHandler(
         cancel_message_f,
