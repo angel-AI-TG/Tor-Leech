@@ -1,0 +1,8 @@
+from tobrot.sample_config import Config
+
+class Config(Config):
+  TG_BOT_TOKEN = "872684560:AAEcnYdLmXEdDAUUuuI6cw0HUnk47QYUirg"
+  APP_ID = 1978854
+  API_HASH = "d24077d54490831018ad093031934e6e"
+  AUTH_CHANNEL = -1001479770759
+  TG_MAX_FILE_SIZE = 2097152000
